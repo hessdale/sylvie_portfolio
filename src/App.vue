@@ -6,22 +6,25 @@
           <h3>Sylvie Ellis</h3>
         </router-link>
       </div>
-      <div class="navigation">
-        <input type="radio" name="media_menu" class="menu_radio_button">
-        <h3>Media</h3>
-
-        <router-link to="/printmaking">printmaking</router-link>
-        <router-link to="/painting">painting</router-link>
-        <router-link to="/intermedia">intermedia</router-link>
-        <router-link to="/artistbooks">artistbooks</router-link>
+      <div class="media_navigation">
+        <h3>
+          Media
+        </h3>
+        <span class="media_menu">
+          <router-link to="/printmaking">printmaking</router-link>
+          <router-link to="/painting">painting</router-link>
+          <router-link to="/intermedia">intermedia</router-link>
+          <router-link to="/artistbooks">artistbooks</router-link>
+        </span>
       </div>
-      <div class="navigation">
-        <input type="radio" name="media_menu" class="menu_radio_button">
+      <div class="about_navigation">
         <h3>About</h3>
-        <router-link to="/bio">bio</router-link>
-        <router-link to="/contact">contact</router-link>
-        <router-link to="/statement">statement</router-link>
-        <router-link to="/resume">resume</router-link>
+        <span class="about_menu">
+          <router-link to="/bio">bio</router-link>
+          <router-link to="/contact">contact</router-link>
+          <router-link to="/statement">statement</router-link>
+          <router-link to="/resume">resume</router-link>
+        </span>
       </div>
     </nav>
     <router-view />
@@ -37,12 +40,26 @@
   color: #2c3e50;
 }
 
-.menu_radio_button {
+.navigation {
+  display: grid;
+}
+
+.media_navigation:hover .media_menu {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+.about_navigation:hover .about_menu {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+.about_menu {
   display: none;
 }
 
-.navigation {
-  display: grid;
+.media_menu {
+  display: none;
 }
 
 nav {
